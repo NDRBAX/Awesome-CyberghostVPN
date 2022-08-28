@@ -89,7 +89,7 @@ def main():
     )
 
     # MAIN MENU > ADVANCE CONNECT
-    advance_menu_title = " \n\n 🎛️ ADVANCE CONNECT\n"
+    advance_menu_title = " \n\n 🎛️  ADVANCE CONNECT\n"
     advance_menu_items = [ "    1️⃣   VPN Protocol             ",
                            "    2️⃣   Traffic Protocol         ",
                            "    3️⃣   Connection Type          ",
