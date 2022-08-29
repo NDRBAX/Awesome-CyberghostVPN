@@ -1,98 +1,92 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Cyberghostvpn Cli   Public" />
+  <img src="./assets/vpn.png" alt="Awesome CyberghostVPN Cli" height="150px" />
 
-  &#xa0;
+&#xa0;
 
-  <!-- <a href="https://cyberghostvpnclipublic.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Cyberghostvpn Cli   Public</h1>
+<h1 align="center">Awesome CyberghostVPN</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/cyberghostvpn-cli---public?color=56BEB8">
-
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/cyberghostvpn-cli---public?color=56BEB8">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/cyberghostvpn-cli---public?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/cyberghostvpn-cli---public?color=56BEB8">
-
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/cyberghostvpn-cli---public?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/cyberghostvpn-cli---public?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/cyberghostvpn-cli---public?color=56BEB8" /> -->
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/NDRBAX/cyberghostvpn-cli---public?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/NDRBAX/cyberghostvpn-cli---public?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/NDRBAX/cyberghostvpn-cli---public?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/NDRBAX/cyberghostvpn-cli---public?color=56BEB8">
+  <img alt="Github issues" src="https://img.shields.io/github/issues/NDRBAX/cyberghostvpn-cli---public?color=56BEB8" />
+<img alt="Github forks" src="https://img.shields.io/github/forks/NDRBAX/cyberghostvpn-cli---public?color=56BEB8" />
+ <img alt="Github stars" src="https://img.shields.io/github/stars/NDRBAX/cyberghostvpn-cli---public?color=56BEB8" />
 </p>
 
 <!-- Status -->
 
-<!-- <h4 align="center"> 
+<!-- <h4 align="center">
 	🚧  Cyberghostvpn Cli   Public 🚀 Under construction...  🚧
-</h4> 
+</h4>
 
 <hr> -->
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
   <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="https://github.com/NDRBAX" target="_blank">Author</a>
 </p>
 
 <br>
 
-## :dart: About ##
+## :dart: About
 
-Describe your project
+This is my first open source project, and the first one I coded in Python. Awesome CyberghostVPN is a tool that will make your VPN connections easier via command lines. It works perfectly on Linux. However, if you encounter any bugs, don't hesitate to contact me.
 
-## :sparkles: Features ##
+&#xa0;
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+## :sparkles: Features
 
-## :rocket: Technologies ##
+:heavy_check_mark: Quick connect according to type of navigation (regular web traffic, streaming or p2p torrent)\
+:heavy_check_mark: Advance connect : you can choose your personal settings such as protocols or connection type\
+:heavy_check_mark: List of available servers
 
-The following tools were used in this project:
+<div align="center">
+<img src="./assets/preview-1.png" alt="Awesome CyberghostVPN Cli" height="250px" />
+<img src="./assets/preview-2.png" alt="Awesome CyberghostVPN Cli" height="250px" />
+<img src="./assets/preview-3.png" alt="Awesome CyberghostVPN Cli" height="250px" />
+<img src="./assets/preview-4.png" alt="Awesome CyberghostVPN Cli" height="250px" />
+</div>
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+&#xa0;
 
-## :white_check_mark: Requirements ##
+## :white_check_mark: Requirements
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Before starting :checkered_flag:, you need to have [Python](https://www.python.org/) and [pip](https://pypi.org/project/pip/) installed.
 
-## :checkered_flag: Starting ##
+&#xa0;
+
+## :checkered_flag: Starting
 
 ```bash
 # Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/cyberghostvpn-cli---public
+$ git clone https://github.com/NDRBAX/Awesome-CyberghostVPN.git
 
 # Access
-$ cd cyberghostvpn-cli---public
+$ cd Awesome-CyberghostVPN
 
 # Install dependencies
-$ yarn
+$ pip install -r requirements.txt
 
 # Run the project
-$ yarn start
+$ python vpn.py
 
-# The server will initialize in the <http://localhost:3000>
 ```
 
-## :memo: License ##
+&#xa0;
+
+## :memo: License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
+Project logo - <a href="https://www.flaticon.com/free-icons/vpn" title="vpn icons">Awesome CyberghostVPN</a>
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
-
+Made with :heart: by <a href="https://github.com/NDRBAX" target="_blank">NDRBAX</a>
 &#xa0;
 
 <a href="#top">Back to top</a>
