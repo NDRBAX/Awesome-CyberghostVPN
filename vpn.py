@@ -1,4 +1,5 @@
 import asyncio
+import json
 import subprocess
 import pyfiglet
 from simple_term_menu import TerminalMenu
@@ -13,6 +14,35 @@ N = "\033[0m" # Reset
 
 logo = pyfiglet.figlet_format("CyberghostVPN", font = "slant"  )
 print(logo)
+
+country = []
+code = []
+
+service_name = []
+service_code = []
+
+torrent_name = []
+torrent_code = []
+
+
+f = open("data.json")
+data = json.load(f)
+
+for _element in data["regular-countries"]:
+    country.append(_element["name"])
+    code.append(_element["code"].lower())
+
+for _element in data["streaming-servers"]:
+    service_name.append(_element["service"])
+    service_code.append(_element["code"].lower())
+
+for _element in data["torrent-servers"]:
+    torrent_name.append(_element["name"])
+    torrent_code.append(_element["code"].lower())
+
+service_name_lower = [entry.lower() for entry in service_name]
+
+
 
 # REGULAR WEB
 countryData = PrettyTable(["Country","a","s","d","f","r"])
@@ -38,10 +68,10 @@ def main():
     # MAIN MENU
     main_menu_title = " \n\n 📋 MAIN MENU\n"
     main_menu_items = ["    🚀 Quick connect        ",
-                       "    🎛️ Advance connect      ",
-                       "    🧾 Availables servers   ",
-                       "    4. VPN Status           ",
-                       "    5. Turn off VPN         ",
+                       "    🔐 Advance connect      ",
+                       "    🔎 Availables servers   ",
+                       "    💡 VPN Status           ",
+                       "    🚨 Turn off VPN         ",
                        "    👋 Exit                 "]
     main_menu_cursor = "ᐉᐉᐉ "
     main_menu_cursor_style = ("fg_green", "bold")
@@ -75,7 +105,7 @@ def main():
 
     reg_menu_title = " \n\n 🌐 REGULAR WEB TRAFFIC\n"
     reg_menu_items = [ "    💻 Internet Surfing, gaming, streaming, VoIP services...    ",
-                       "    🍻 Download or transfer data                                ",
+                       "    👾 Download or transfer data                                ",
                        "    👈 Go back                                                  " ]
     reg_menu_back = False
     reg_menu_exit = False
@@ -89,11 +119,11 @@ def main():
     )
 
     # MAIN MENU > ADVANCE CONNECT
-    advance_menu_title = " \n\n 🎛️  ADVANCE CONNECT\n"
+    advance_menu_title = " \n\n 🔐 ADVANCE CONNECT\n"
     advance_menu_items = [ "    1️⃣   VPN Protocol             ",
                            "    2️⃣   Traffic Protocol         ",
                            "    3️⃣   Connection Type          ",
-                           "    ✅  Click to confirm         ",
+                           "    👌  Click to confirm         ",
                            "    👈  Go back to Main Menu     " ]
     advance_menu_back = False
     advance_menu = TerminalMenu(
@@ -107,7 +137,8 @@ def main():
 
     # MAIN MENU > ADVANCE CONNECT > VPN PROTOCOL
     protocol_menu_title = " \n\n VPN PROTOCOL\n"
-    protocol_menu_items = [ "OpenVPN", "WireGuard" ]
+    protocol_menu_items = [ "   1️⃣   OpenVPN         ", 
+                            "   2️⃣   WireGuard       " ]
     protocol_menu_back = False
     protocol_menu = TerminalMenu(
         protocol_menu_items,
@@ -120,7 +151,8 @@ def main():
 
     # MAIN MENU > ADVANCE CONNECT > TRAFFIC PROTOCOL
     traffic_menu_title = " \n\n TRAFFIC PROTOCOL\n"
-    traffic_menu_items = [ "TCP", "UDP" ]
+    traffic_menu_items = [ "   1️⃣   TCP      ",
+                           "   2️⃣   UDP      " ]
     traffic_menu_back = False
     traffic_menu = TerminalMenu(
         traffic_menu_items,
@@ -133,7 +165,9 @@ def main():
 
      # MAIN MENU > ADVANCE CONNECT > CONNECTION TYPE
     type_menu_title = " \n\n CONNECTION TYPE\n"
-    type_menu_items = [ "Regular Web", "Streaming", "P2P Torrent" ]
+    type_menu_items = [ "    🌐 Regular Web     ", 
+                        "    📺 Streaming       ", 
+                        "    🍻 P2P Torrent     " ]
     type_menu_back = False
     type_menu = TerminalMenu(
         type_menu_items,
@@ -145,11 +179,11 @@ def main():
     )
 
     # MAIN MENU > AVAILABLE SERVERS
-    list_menu_title = " \n\n AVAILABLES SERVERS\n"
-    list_menu_items = ["1. Regular web traffic",
-                       "2. Streaming",
-                       "3. P2P Torrent",
-                       "4. Go back"]
+    list_menu_title = " \n\n 🔎 AVAILABLES SERVERS\n"
+    list_menu_items = ["    🌐 Regular web traffic      ",
+                       "    📺 Streaming                ",
+                       "    🍻 P2P Torrent              ",
+                       "    👈 Go back                  "]
     list_menu_back = False
     list_menu = TerminalMenu(
         list_menu_items,
@@ -161,11 +195,11 @@ def main():
     )
 
     # MAIN MENU > AVAILABLE SERVERS > REGULAR WEB TRAFFIC
-    regular_menu_title = " \n\n REGULAR WEB TRAFFIC LIST\n"
-    regular_menu_items = [ "1. Show all countries",
-                           "2. Cities / Countries",
-                           "3. Servers / Cities",
-                           "4. Go Back"]
+    regular_menu_title = " \n\n 🌐 REGULAR WEB TRAFFIC LIST\n"
+    regular_menu_items = [ "    ⭐ All available servers          ",
+                           "    🔥 Server list by countries       ",
+                           "    ✨ Server list by cities          ",
+                           "    👈 Go Back                        "]
     regular_menu_back = False
     regular_menu = TerminalMenu(
         regular_menu_items,
@@ -177,10 +211,10 @@ def main():
     )
 
     # MAIN MENU > AVAILABLE SERVERS > STREAMING
-    streaming_menu_title = " \n\n STREAMING LIST\n"
-    streaming_menu_items = [ "1) Show all countries",
-                             "2) Cities / Countries",
-                             "~~~~~~~~~ BACK ~~~~~~~~~"]
+    streaming_menu_title = " \n\n 📺 STREAMING LIST\n"
+    streaming_menu_items = [ "    ⭐ All available servers        ",
+                             "    🔥 Server list by countries     ",
+                             "    👈 Go Back                      "]
     streaming_menu_back = False
     streaming_menu = TerminalMenu(
         streaming_menu_items,
@@ -192,10 +226,10 @@ def main():
     )
 
     # MAIN MENU > AVAILABLE SERVERS > TORRENT
-    torrent_menu_title = " \n\n P2P TORRENT LIST\n"
-    torrent_menu_items = [ "1) Show all countries",
-                           "2) Cities / Countries",
-                           "~~~~~~~~~ BACK ~~~~~~~~~"]
+    torrent_menu_title = " \n\n 🍻 P2P TORRENT LIST\n"
+    torrent_menu_items = [ "    ⭐ All available servers        ",
+                           "    🔥 Server list by countries     ",
+                           "    👈 Go Back                      "]
     torrent_menu_back = False
     torrent_menu = TerminalMenu(
         torrent_menu_items,
@@ -216,7 +250,8 @@ def main():
         CODE = None
         SERVICE = None
 
-        if main_sel == 0:   # QUICK CONNECT
+        # QUICK CONNECT 
+        if main_sel == 0:
             while not quick_menu_back:
                 edit_sel = quick_menu.show()
 
@@ -224,39 +259,48 @@ def main():
                 if edit_sel == 0:
                     while not reg_menu_back:
                         edit_sel = reg_menu.show()
+
                         # SURF
                         if edit_sel == 0:
                             print(countryData.get_string(title=G+"Cyberghost VPN ~ Regular"+N,
                                         header=False))
                             def surfConnect():
                                 CODE = input("\n\t      ENTER COUNTRY CODE: ")
-                                if CODE is None or len(CODE) > 2:
-                                    print(R + "\nCode should conteins two characters ..." + N)
+                                if CODE is None or len(CODE) != 2:
+                                    print(R + "\n⛔ Code should conteins two characters ...\n" + N)
+                                elif CODE.lower() not in code:
+                                    print(R + "\n⛔ Wrong code. Check if the code exists in the list of available servers, then try again ...\n" + N)
                                 else : 
                                     async def main():
                                         print( G + "\nQuick connect selected ...\n" + N)
-                                        process = subprocess.run(["sudo", "cyberghostvpn", "--country-code", CODE, "--openvpn", "--udp", "--connect"], shell=False , check=True, text=True)
+                                        position = code.index(CODE.lower())
+                                        subprocess.run(["sudo", "cyberghostvpn", "--country-code", CODE, "--openvpn", "--udp", "--connect"], shell=False , check=True, text=True)
                                         await asyncio.sleep(1)
-                                        print(G + "\nWell done ! You're now connected to Cyberghost VPN at " + CODE + " !" + N)
+                                        print(G + "\n\n🎉 Well done ! You're now connected to Cyberghost VPN in " + country[position] + " !\n" + N)
                                     asyncio.run(main())
                             surfConnect()
-                            reg_menu_back = False
+
                         # DOWNLOADS
                         elif edit_sel == 1:
                             print(countryData.get_string(title=G+"Cyberghost VPN ~ Regular"+N,
                                         header=False))
                             def downloadConnect():
                                 CODE = input("\n\t      ENTER COUNTRY CODE: ")
-                                if CODE is None or len(CODE) > 2:
-                                    print(R + "\nCode should conteins two characters ..." + N)
+                                if CODE is None or len(CODE) != 2:
+                                    print(R + "\n⛔ Country code should contains two characters ..." + N)
+                                elif CODE.lower() not in code:
+                                    print(R + "\n⛔ Wrong code. Check if the code exists in the list of available servers, then try again ...\n" + N)
                                 else : 
                                     async def main():
                                         print( G + "\nQuick connect selected ...\n" + N)
-                                        process = subprocess.run(["sudo", "cyberghostvpn", "--country-code", CODE, "--openvpn", "--tcp", "--connect"], shell=False , check=True, text=True)
+                                        position = code.index(CODE.lower())
+                                        subprocess.run(["sudo", "cyberghostvpn", "--country-code", CODE, "--openvpn", "--tcp", "--connect"], shell=False , check=True, text=True)
                                         await asyncio.sleep(1)
-                                        print(G + "\nWell done ! You're now connected to Cyberghost VPN at " + CODE + " !" + N)
+                                        print(G + "\n\n🎉 Well done ! You're now connected to Cyberghost VPN in " + country[position] + " !\n" + N)
                                     asyncio.run(main())
                             downloadConnect()
+
+                        # BACK
                         elif edit_sel == 2:
                             reg_menu_back = True
                     reg_menu_back = False
@@ -265,45 +309,70 @@ def main():
                 elif edit_sel == 1:
                     print(streamingData.get_string(title=G+"Cyberghost VPN ~ Streaming"+N,
                                         header=False))
+
                     def streamingConnect():
-                        CODE = input("\n\t      ENTER COUNTRY CODE: ")
-                        SERVICE = input("\n\t      ENTER SERVICE NAME: ")
-                        if CODE is None or len(CODE) > 2 and SERVICE is None or len(SERVICE) < 0:
-                            print(R + "\nWrong Code or Service Name ..." + N)
-                        else : 
+                        code_errors = True
+                        service_errors = True 
+
+                        while code_errors and service_errors:
+                            CODE = input("\n\t      ENTER COUNTRY CODE: ")
+                            SERVICE = input("\n\t      ENTER SERVICE NAME: ")
+
+                            if CODE is None or len(CODE) != 2:
+                                print(R + "\n⛔ Wrong country code. Code should conteins two characters." + N)
+                                code_errors = True
+                            elif CODE.lower() not in service_code:
+                                print(R + "\n⛔ Check if the code exists in the list of available servers, then try again ..." + N)
+                                code_errors = True
+                            elif SERVICE is None or len(SERVICE) <= 1:
+                                print(R + "\n⛔ You must fill the service name, then try again  ..." + N)
+                                service_errors = True 
+                            elif SERVICE.lower() not in service_name_lower:
+                                print(R + "\n⛔ Wrong service name. Find the exact name of the service, then try again  ..." + N)
+                                service_errors = True 
+                            else:
+                                service_errors = False
+                                code_errors = False 
+                        else:
                             async def main():
                                 print( G + "\nStreaming connect selected ...\n" + N)
-                                process = subprocess.run(["sudo", "cyberghostvpn", "--streaming", SERVICE, "--country-code", CODE, "--connect"], shell=False , check=True, text=True)
+                                position = service_code.index(CODE.lower())
+                                subprocess.run(["sudo", "cyberghostvpn", "--streaming", SERVICE, "--country-code", CODE, "--connect"], shell=False , check=True, text=True)
                                 await asyncio.sleep(1)
-                                print(G + "\nWell done ! You're now connected to Cyberghost VPN at " + SERVICE + "-" + CODE + " !" + N)
+                                print(G + "\n\n🎉 Well done ! You're now connected to Cyberghost VPN in " + SERVICE + "-" + service_name[position] + " !\n" + N)
                             asyncio.run(main())
-                            edit_sel = quick_menu.show()
                     streamingConnect()
+
                 # P2P Torrent
                 elif edit_sel == 2:
                     print(torrentData.get_string(title=G+"Cyberghost VPN ~ Torrent"+N,
                                         header=False))
+
                     def torrentConnect():
                         CODE = input("\n\t      ENTER COUNTRY CODE: ")
-                        if CODE is None or len(CODE) > 2:
-                            print(R + "\nCode should conteins two characters ..." + N)
+                        if CODE is None or len(CODE) != 2 or CODE.lower() not in torrent_code:
+                            print(R + "\nWrong code. Code should conteins two characters ..." + N)
                         else : 
                             async def main():
                                 print( G + "\nQuick connect selected ...\n" + N)
-                                process = subprocess.run(["sudo", "cyberghostvpn", "--torrent", "--country-code", CODE, "--connect"], shell=False , check=True, text=True)
+                                position = torrent_code.index(CODE.lower())
+                                subprocess.run(["sudo", "cyberghostvpn", "--torrent", "--country-code", CODE, "--connect"], shell=False , check=True, text=True)
                                 await asyncio.sleep(1)
-                                print(G + "\nWell done ! You're now connected to Cyberghost VPN at " + CODE + " !" + N)
+                                print(G + "\n\n🎉 Well done ! You're now connected to Cyberghost VPN at " + torrent_name[position] + " !\n" + N)
                             asyncio.run(main())
-                            edit_sel = quick_menu.show()
                     torrentConnect()
+
+                # Back
                 elif edit_sel == 3:
-                                quick_menu_back = True
-                                clear_screen = True
+                    quick_menu_back = True
+                    clear_screen = True
             quick_menu_back = False
 
-        elif main_sel == 1:   # ADVANCE CONNECT
+        # ADVANCE CONNECT 
+        elif main_sel == 1:
             while not advance_menu_back:
                 edit_sel = advance_menu.show()
+
                 # PROTOCOL
                 if edit_sel == 0:
                     while not protocol_menu_back:
@@ -317,7 +386,7 @@ def main():
                                 print(G + "WireGuard selected ..." + N)
                                 protocol_menu_back = True
                     protocol_menu_back = False
-                
+
                 # TRAFFIC PROTOCOL
                 elif edit_sel == 1:
                     while not traffic_menu_back:
@@ -331,17 +400,17 @@ def main():
                                 print(G + "UDP selected ..." + N)
                                 traffic_menu_back = True
                     traffic_menu_back = False
-                
+
                 # CONNECTION TYPE
                 elif edit_sel == 2:
                     while not type_menu_back:
                         edit_sel = type_menu.show()
                         if edit_sel == 0:
-                            print(countryData.get_string(title=G+"Cyberghost VPN ~ Regular"+N,
-                                        header=False))
                             # CITY = input("\n\t      ENTER CITY NAME: ")
                             TYPE = "--traffic"
-                            print(G + "Regular Web selected ..." + N)
+                            print(G + "Regular Web selected ...\n" + N)
+                            print(countryData.get_string(title=G+"Cyberghost VPN ~ Regular"+N,
+                                        header=False))
                             type_menu_back = True
                         elif edit_sel == 1:
                             print(streamingData.get_string(title=G+"Cyberghost VPN ~ Streaming"+N,
@@ -372,14 +441,18 @@ def main():
                         print( G + "\nYou choose " + CODE + " server ...\n" + N) 
                         subprocess.run(["sudo", "cyberghostvpn", TYPE, "--country-code", CODE, PROTOCOL, TRAFFIC, "--connect"], shell=False , check=True, text=True)
                         print(G + "\nWell done ! You're now connected to Cyberghost VPN at " + CODE + " !" + N)
+
                 # BACK
                 elif edit_sel == 4:
                     advance_menu_back = True
+                    clear_screen = True 
             advance_menu_back = False
 
-        elif main_sel == 2:   # AVAILABLES SERVERS
+        # AVAILABLES SERVERS
+        elif main_sel == 2:
             while not list_menu_back:
                 edit_sel = list_menu.show()
+
                 # REGULAR WEB
                 if edit_sel == 0:
                     while not regular_menu_back:
@@ -387,20 +460,21 @@ def main():
 
                         if edit_sel == 0:
                             # ALL COUNTRIES
-                            process = subprocess.run(["sudo","cyberghostvpn", "--traffic", "--country-code"], shell=False, check=True, text=True)
+                            subprocess.run(["sudo","cyberghostvpn", "--traffic", "--country-code"], shell=False, check=True, text=True)
                         elif edit_sel == 1:
                             # ONE COUNTRY // Country name 
                             CODE = input("\n\t      ENTER COUNTRY CODE: ")
-                            process = subprocess.run(["sudo", "cyberghostvpn", "--traffic", "--country-code", CODE], shell=False, check=True, text=True)
+                            subprocess.run(["sudo", "cyberghostvpn", "--traffic", "--country-code", CODE], shell=False, check=True, text=True)
                         elif edit_sel == 2:
                             # ONE CITY // Country name / City Name 
                             CODE = input("\n\t      ENTER COUNTRY CODE: ")
                             CITY = input("\n\t      ENTER CITY NAME: ")
-                            process = subprocess.run(["sudo", "cyberghostvpn", "--traffic", "--country-code", CODE, "--city", CITY], shell=False, check=True, text=True)
+                            subprocess.run(["sudo", "cyberghostvpn", "--traffic", "--country-code", CODE, "--city", CITY], shell=False, check=True, text=True)
                         elif edit_sel == 3:
                             regular_menu_back = True
                             clear_screen = True
                     regular_menu_back = False                    
+
                 # STREAMING
                 elif edit_sel == 1:
                     while not streaming_menu_back:
@@ -408,36 +482,51 @@ def main():
 
                         if edit_sel == 0:
                              # ALL COUNTRIES
-                            process = subprocess.run(["sudo", "cyberghostvpn", "--streaming", "--country-code"], shell=False, check=True, text=True)
+                            subprocess.run(["sudo", "cyberghostvpn", "--streaming", "--country-code"], shell=False, check=True, text=True)
                         elif edit_sel == 1:
                             # ONE COUNTRY // Country Name
                             CODE = input("\n\t      ENTER COUNTRY CODE: ")
-                            process = subprocess.run(["sudo", "cyberghostvpn", "--streaming", "--country-code", CODE], shell=False, check=True, text=True)
+                            subprocess.run(["sudo", "cyberghostvpn", "--streaming", "--country-code", CODE], shell=False, check=True, text=True)
                         elif edit_sel == 2:
                             streaming_menu_back = True
                             clear_screen = True
                     streaming_menu_back = False
+
                 # TORRENT
                 elif edit_sel == 2:
                     while not torrent_menu_back:
                         edit_sel = torrent_menu.show()
                         if edit_sel == 0:
                             # ALL COUNTRIES
-                            process = subprocess.run(["sudo", "cyberghostvpn", "--torrent", "--country-code"], shell=False, check=True, text=True)
+                            subprocess.run(["sudo", "cyberghostvpn", "--torrent", "--country-code"], shell=False, check=True, text=True)
                         elif edit_sel == 1:
                             # ONE COUNTRY // Country Name
                             CODE = input("\n\t      ENTER COUNTRY CODE: ")
-                            process = subprocess.run(["sudo", "cyberghostvpn", "--torrent", "--country-code", CODE], shell=False, check=True, text=True)
+                            subprocess.run(["sudo", "cyberghostvpn", "--torrent", "--country-code", CODE], shell=False, check=True, text=True)
                         elif edit_sel == 2:
                             torrent_menu_back = True
                             clear_screen = True
                     torrent_menu_back = False
+
+                # BACK
                 elif edit_sel == 3:
                     list_menu_back = True      
             list_menu_back = False
-        elif main_sel == 3:   # QUIT
+
+        # VPN STATUS
+        elif main_sel == 3:
+            subprocess.run(["cyberghostvpn", "--status"], shell=False, check=True, text=True)
+
+        # STOP VPN
+        elif main_sel == 4:
+            subprocess.run(["sudo", "cyberghostvpn", "--stop"], shell=False, check=True, text=True)
+
+        # QUIT
+        elif main_sel == 5:
             main_menu_exit = True
-            print("Quit Selected")
+            print("See you soon 👋")
 
 if __name__ == "__main__":
     main()
+
+f.close()
