@@ -53,7 +53,6 @@ This is my first open source project, and the first one I coded in Python. Aweso
 <img src="./assets/preview-4.png" alt="Awesome CyberghostVPN Cli" height="150px" />
 <img src="./assets/preview-5.png" alt="Awesome CyberghostVPN Cli" height="150px" />
 <img src="./assets/preview-6.png" alt="Awesome CyberghostVPN Cli" height="150px" />
-<img src="./assets/preview-7.png" alt="Awesome CyberghostVPN Cli" height="150px" />
 </div>
 
 &#xa0;
