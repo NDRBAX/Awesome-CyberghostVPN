@@ -47,10 +47,10 @@ This is my first open source project, and the first one I coded in Python. Aweso
 :heavy_check_mark: List of available servers
 
 <div align="center">
-<img src="./assets/preview-1.png" alt="Awesome CyberghostVPN Cli" height="250px" />
-<img src="./assets/preview-2.png" alt="Awesome CyberghostVPN Cli" height="250px" />
-<img src="./assets/preview-3.png" alt="Awesome CyberghostVPN Cli" height="250px" />
-<img src="./assets/preview-4.png" alt="Awesome CyberghostVPN Cli" height="250px" />
+<img src="./assets/preview-1.png" alt="Awesome CyberghostVPN Cli" height="150px" />
+<img src="./assets/preview-2.png" alt="Awesome CyberghostVPN Cli" height="150px" />
+<img src="./assets/preview-3.png" alt="Awesome CyberghostVPN Cli" height="150px" />
+<img src="./assets/preview-4.png" alt="Awesome CyberghostVPN Cli" height="150px" />
 </div>
 
 &#xa0;
