@@ -65,6 +65,8 @@ Before starting :checkered_flag:, you need to have [Python](https://www.python.o
 
 ## :checkered_flag: Starting
 
+&#xa0;
+
 ```bash
 # Clone this project
 $ git clone https://github.com/NDRBAX/Awesome-CyberghostVPN.git
@@ -78,17 +80,29 @@ $ pip install -r requirements.txt
 # Run the project
 $ python vpn.py
 
+# To use this tool, you can create an alias into your bashrc or zshrc file
+$ alias awesome_vpn="python ~/path-to-your/Awesome-CyberghostVPN/vpn.py"
+
+# Then you can run the script with :
+$ awesome_vpn
+
 ```
 
 &#xa0;
 
 ## :memo: License
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+Project logo - <a href="https://www.flaticon.com/free-icons/vpn" title="vpn icons">Awesome CyberghostVPN</a>\
+_This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file._
 
-Project logo - <a href="https://www.flaticon.com/free-icons/vpn" title="vpn icons">Awesome CyberghostVPN</a>
-
-Made with :heart: by <a href="https://github.com/NDRBAX" target="_blank">NDRBAX</a>
 &#xa0;
 
+<div align="center">
+
+Made with :heart: by <a href="https://github.com/NDRBAX" target="_blank">NDRBAX</a>
+
+</div>
+
+<div align="right">
 <a href="#top">Back to top</a>
+</div>
