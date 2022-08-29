@@ -8,13 +8,13 @@
 <h1 align="center">Awesome CyberghostVPN</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/NDRBAX/cyberghostvpn-cli---public?color=56BEB8">
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/NDRBAX/cyberghostvpn-cli---public?color=56BEB8">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/NDRBAX/cyberghostvpn-cli---public?color=56BEB8">
-  <img alt="License" src="https://img.shields.io/github/license/NDRBAX/cyberghostvpn-cli---public?color=56BEB8">
-  <img alt="Github issues" src="https://img.shields.io/github/issues/NDRBAX/cyberghostvpn-cli---public?color=56BEB8" />
-<img alt="Github forks" src="https://img.shields.io/github/forks/NDRBAX/cyberghostvpn-cli---public?color=56BEB8" />
- <img alt="Github stars" src="https://img.shields.io/github/stars/NDRBAX/cyberghostvpn-cli---public?color=56BEB8" />
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/NDRBAX/Awesome-CyberghostVPN?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/NDRBAX/Awesome-CyberghostVPN?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/NDRBAX/Awesome-CyberghostVPN?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/NDRBAX/Awesome-CyberghostVPN?color=56BEB8">
+  <img alt="Github issues" src="https://img.shields.io/github/issues/NDRBAX/Awesome-CyberghostVPN?color=56BEB8" />
+<img alt="Github forks" src="https://img.shields.io/github/forks/NDRBAX/Awesome-CyberghostVPN?color=56BEB8" />
+ <img alt="Github stars" src="https://img.shields.io/github/stars/NDRBAX/Awesome-CyberghostVPN?color=56BEB8" />
 </p>
 
 <!-- Status -->
