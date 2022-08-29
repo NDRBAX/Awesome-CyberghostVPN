@@ -438,9 +438,10 @@ def main():
                         subprocess.run(["sudo", "cyberghostvpn", "--streaming", SERVICE, "--country-code", CODE, "--connect"], shell=False , check=True, text=True)
                     else:
                         CODE = input("\n\t      ENTER COUNTRY CODE: ")
-                        print( G + "\nYou choose " + CODE + " server ...\n" + N) 
+                        position = code.index(CODE.lower())
+                        print( G + "\nYou choose a server from " + country[position]  + " ...\n" + N) 
                         subprocess.run(["sudo", "cyberghostvpn", TYPE, "--country-code", CODE, PROTOCOL, TRAFFIC, "--connect"], shell=False , check=True, text=True)
-                        print(G + "\nWell done ! You're now connected to Cyberghost VPN at " + CODE + " !" + N)
+                        print(G + "\n🎉 Well done ! You're now connected to Cyberghost VPN at " + country[position] + " !" + N)
 
                 # BACK
                 elif edit_sel == 4:
