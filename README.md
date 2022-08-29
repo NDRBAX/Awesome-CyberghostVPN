@@ -28,7 +28,7 @@
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
+  <a href="#memo-credits">Credits</a> &#xa0; | &#xa0;
   <a href="https://github.com/NDRBAX" target="_blank">Author</a>
 </p>
 
@@ -90,15 +90,15 @@ $ awesome_vpn
 
 &#xa0;
 
-## :memo: License
+## :memo: Credits
 
 Project logo - <a href="https://www.flaticon.com/free-icons/vpn" title="vpn icons">Awesome CyberghostVPN</a>\
-_This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file._
 
 &#xa0;
 
 <div align="center">
 
+_This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file._ \
 Made with :heart: by <a href="https://github.com/NDRBAX" target="_blank">NDRBAX</a>
 
 </div>
