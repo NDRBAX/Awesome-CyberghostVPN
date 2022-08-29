@@ -92,7 +92,9 @@ $ awesome_vpn
 
 ## :memo: Credits
 
-Project logo - <a href="https://www.flaticon.com/free-icons/vpn" title="vpn icons">Awesome CyberghostVPN</a>\
+&#xa0;
+
+Project logo - <a href="https://www.flaticon.com/free-icons/vpn" title="vpn icons">Awesome CyberghostVPN</a>
 
 &#xa0;
 
