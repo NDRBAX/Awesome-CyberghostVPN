@@ -1,0 +1,4 @@
+prettytable==3.4.0
+pyfiglet==0.8.post1
+simple-term-menu==1.5.0
+wcwidth==0.2.5
