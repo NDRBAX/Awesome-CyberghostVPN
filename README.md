@@ -1,11 +1,7 @@
 <div align="center" id="top"> 
   <img src="./assets/vpn.png" alt="Awesome CyberghostVPN Cli" height="150px" />
-
-&#xa0;
-
+  <h1>Awesome CyberghostVPN</h1>
 </div>
-
-<h1 align="center">Awesome CyberghostVPN</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/NDRBAX/Awesome-CyberghostVPN?color=56BEB8">
