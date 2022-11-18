@@ -1,5 +1,5 @@
 <div align="center" id="top"> 
-  <img src="./assets/vpn.png" alt="Awesome CyberghostVPN Cli" height="150px" />
+  <img src="./assets/vpn.png" alt="Awesome CyberghostVPN Cli" height="100px" />
   <h1>Awesome CyberghostVPN</h1>
 </div>
 
